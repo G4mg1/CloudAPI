@@ -11,14 +11,17 @@
 local G2L = {};
 
 -- StarterGui.Main
-G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
 G2L["1"]["Name"] = [[Main]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-G2L["1"]["ResetOnSpawn"] = false
+
 
 -- StarterGui.Main.Executor
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["Visible"] = false;
+G2L["2"]["ZIndex"] = 999999999;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
 G2L["2"]["Size"] = UDim2.new(0, 628, 0, 366);
@@ -29,6 +32,7 @@ G2L["2"]["Name"] = [[Executor]];
 
 -- StarterGui.Main.Executor.Top
 G2L["3"] = Instance.new("Frame", G2L["2"]);
+G2L["3"]["ZIndex"] = 999999999;
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
 G2L["3"]["Size"] = UDim2.new(0, 627, 0, 48);
@@ -39,6 +43,7 @@ G2L["3"]["Name"] = [[Top]];
 
 -- StarterGui.Main.Executor.Top.Logo
 G2L["4"] = Instance.new("ImageLabel", G2L["3"]);
+G2L["4"]["ZIndex"] = 999999999;
 G2L["4"]["BorderSizePixel"] = 0;
 G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
@@ -57,6 +62,7 @@ G2L["5"] = Instance.new("UIAspectRatioConstraint", G2L["4"]);
 
 -- StarterGui.Main.Executor.Top.TextLabel
 G2L["6"] = Instance.new("TextLabel", G2L["3"]);
+G2L["6"]["ZIndex"] = 999999999;
 G2L["6"]["BorderSizePixel"] = 0;
 G2L["6"]["TextSize"] = 19;
 G2L["6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -76,6 +82,7 @@ G2L["7"]["BorderSizePixel"] = 0;
 G2L["7"]["BackgroundTransparency"] = 1;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
 G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["ZIndex"] = 999999999;
 G2L["7"]["Image"] = [[rbxassetid://104361429236506]];
 G2L["7"]["Size"] = UDim2.new(0, 44, 0, 41);
 G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -95,6 +102,7 @@ G2L["9"] = Instance.new("UIAspectRatioConstraint", G2L["7"]);
 
 -- StarterGui.Main.Executor.Buttons
 G2L["a"] = Instance.new("Frame", G2L["2"]);
+G2L["a"]["ZIndex"] = 999999999;
 G2L["a"]["BorderSizePixel"] = 0;
 G2L["a"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
 G2L["a"]["Size"] = UDim2.new(0, 130, 0, 293);
@@ -118,6 +126,7 @@ G2L["c"]["TextSize"] = 21;
 G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["c"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
 G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["c"]["ZIndex"] = 999999999;
 G2L["c"]["Size"] = UDim2.new(0, 113, 0, 88);
 G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["c"]["Text"] = [[Execute]];
@@ -150,6 +159,7 @@ G2L["f"]["TextSize"] = 21;
 G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["f"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
 G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["f"]["ZIndex"] = 999999999;
 G2L["f"]["Size"] = UDim2.new(0, 113, 0, 88);
 G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Text"] = [[Clear]];
@@ -182,6 +192,7 @@ G2L["12"]["TextSize"] = 21;
 G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["12"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
 G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["12"]["ZIndex"] = 999999999;
 G2L["12"]["Size"] = UDim2.new(0, 113, 0, 88);
 G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["12"]["Text"] = [[Inject]];
@@ -211,6 +222,7 @@ G2L["14"] = Instance.new("UIAspectRatioConstraint", G2L["13"]);
 G2L["15"] = Instance.new("TextBox", G2L["2"]);
 G2L["15"]["Name"] = [[CodeBar]];
 G2L["15"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["15"]["ZIndex"] = 999999999;
 G2L["15"]["BorderSizePixel"] = 0;
 G2L["15"]["TextWrapped"] = true;
 G2L["15"]["TextSize"] = 18;
@@ -261,6 +273,7 @@ G2L["1b"]["BorderSizePixel"] = 0;
 G2L["1b"]["BackgroundTransparency"] = 1;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
 G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["ZIndex"] = 999999999;
 G2L["1b"]["Image"] = [[rbxassetid://107210361311982]];
 G2L["1b"]["Size"] = UDim2.new(0, 47, 0, 74);
 G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
